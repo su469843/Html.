@@ -5,13 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>科学计算器</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f06, #4a90e2);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .calculator {
             width: 300px;
             padding: 20px;
-            border: 1px solid #ccc;
             border-radius: 10px;
-            box-shadow: 0 0 10px #ccc;
-            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
         }
         .display {
             width: 100%;
@@ -22,6 +40,8 @@
             font-size: 18px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
         }
         .buttons {
             display: grid;
@@ -34,11 +54,16 @@
             cursor: pointer;
             border-radius: 5px;
             border: 1px solid #ccc;
-            background-color: #f9f9f9;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transition: background-color 0.2s, transform 0.1s;
         }
         .button.operator {
-            background-color: #f0ad4e;
-            color: white;
+            background-color: rgba(240, 173, 78, 0.8);
+        }
+        .button:active {
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: scale(0.95);
         }
     </style>
 </head>
@@ -117,4 +142,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
